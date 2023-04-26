@@ -1,6 +1,8 @@
 package com.itaem.navigationdemo.left;
 
 
+import android.graphics.Color;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.itaem.navigationdemo.R;
@@ -20,5 +22,10 @@ public class LeftAdapter extends BaseQuickAdapter<NavigationBean.DataBean, BaseV
     @Override
     protected void convert(@NonNull BaseViewHolder baseViewHolder, NavigationBean.DataBean dataBean) {
         baseViewHolder.setText(R.id.text_item_left,dataBean.getName());
+        if (dataBean.getSelect()){
+            baseViewHolder.setBackgroundColor(R.id.text_item_left, Color.RED);
+        }else {
+            baseViewHolder.setBackgroundResource(R.id.text_item_left, R.color.gray);
+        }
     }
 }
